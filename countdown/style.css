@@ -40,30 +40,32 @@ h1 {
 
 .stats {
     display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: nowrap;
 }
 
 .stat {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 120px;
+    min-width: 80px;
+    flex: 1;
 }
 
 .stat .number {
-    font-size: 3em;
+    font-size: 2.2em;
     font-weight: bold;
     margin-bottom: 5px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .stat .label {
-    font-size: 0.9em;
+    font-size: 0.75em;
     opacity: 0.8;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-align: center;
 }
 
 .time-display {
@@ -71,6 +73,22 @@ h1 {
     justify-content: center;
     align-items: center;
     margin: 30px 0;
+    gap: 20px;
+}
+
+.time-today-label {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Courier New', monospace;
+    display: flex;
+    align-items: baseline;
+}
+
+.time-units {
+    display: flex;
+    align-items: center;
     gap: 10px;
 }
 
@@ -228,12 +246,23 @@ h1 {
     }
     
     .stats {
-        flex-direction: column;
-        gap: 15px;
+        gap: 10px;
+    }
+    
+    .stat {
+        min-width: 60px;
     }
     
     .stat .number {
-        font-size: 2.5em;
+        font-size: 1.8em;
+    }
+    
+    .stat .label {
+        font-size: 0.65em;
+    }
+    
+    .time-today-label {
+        font-size: 2em;
     }
     
     .time-number {
@@ -242,6 +271,11 @@ h1 {
     
     .time-separator {
         font-size: 2em;
+    }
+    
+    .time-display {
+        flex-direction: column;
+        gap: 15px;
     }
     
     .progress-ring {
@@ -259,8 +293,24 @@ h1 {
         font-size: 1.7em;
     }
     
+    .stats {
+        gap: 5px;
+    }
+    
+    .stat {
+        min-width: 50px;
+    }
+    
     .stat .number {
-        font-size: 2em;
+        font-size: 1.5em;
+    }
+    
+    .stat .label {
+        font-size: 0.6em;
+    }
+    
+    .time-today-label {
+        font-size: 1.8em;
     }
     
     .time-number {
@@ -273,6 +323,11 @@ h1 {
     
     .time-unit {
         min-width: 50px;
+    }
+    
+    .time-display {
+        flex-direction: column;
+        gap: 10px;
     }
     
     .progress-ring {

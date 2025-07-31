@@ -8,10 +8,14 @@
 </head>
 <body>
     <div class="container">
-        <h1>Days Remaining in <span id="currentYear"></span></h1>
+        <h1>Time Remaining</h1>
         
         <div class="countdown-info">
             <div class="stats">
+                <div class="stat">
+                    <span class="number" id="currentYear"></span>
+                    <span class="label">Year</span>
+                </div>
                 <div class="stat">
                     <span class="number" id="daysRemaining"></span>
                     <span class="label">Days Remaining</span>
@@ -28,19 +32,22 @@
         </div>
 
         <div class="time-display">
-            <div class="time-unit">
-                <span class="time-number" id="hoursRemaining"></span>
-                <span class="time-label">Hours</span>
-            </div>
-            <div class="time-separator">:</div>
-            <div class="time-unit">
-                <span class="time-number" id="minutesRemaining"></span>
-                <span class="time-label">Minutes</span>
-            </div>
-            <div class="time-separator">:</div>
-            <div class="time-unit">
-                <span class="time-number" id="secondsRemaining"></span>
-                <span class="time-label">Seconds</span>
+            <div class="time-today-label">Today</div>
+            <div class="time-units">
+                <div class="time-unit">
+                    <span class="time-number" id="hoursRemaining"></span>
+                    <span class="time-label">Hours</span>
+                </div>
+                <div class="time-separator">:</div>
+                <div class="time-unit">
+                    <span class="time-number" id="minutesRemaining"></span>
+                    <span class="time-label">Minutes</span>
+                </div>
+                <div class="time-separator">:</div>
+                <div class="time-unit">
+                    <span class="time-number" id="secondsRemaining"></span>
+                    <span class="time-label">Seconds</span>
+                </div>
             </div>
         </div>
 
