@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year Countdown - Days Remaining</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Days Remaining in <span id="currentYear"></span></h1>
+        
+        <div class="countdown-info">
+            <div class="stats">
+                <div class="stat">
+                    <span class="number" id="daysRemaining"></span>
+                    <span class="label">Days Remaining</span>
+                </div>
+                <div class="stat">
+                    <span class="number" id="daysPassed"></span>
+                    <span class="label">Days Passed</span>
+                </div>
+                <div class="stat">
+                    <span class="number" id="percentageRemaining"></span>
+                    <span class="label">% Remaining</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-labels">
+                <span>Jan 1</span>
+                <span>Dec 31</span>
+            </div>
+        </div>
+
+        <div class="current-date">
+            <p>Today is <span id="currentDate"></span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
