@@ -27,9 +27,44 @@
             </div>
         </div>
 
-        <div class="progress-container">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
+        <div class="time-display">
+            <div class="time-unit">
+                <span class="time-number" id="hoursRemaining"></span>
+                <span class="time-label">Hours</span>
+            </div>
+            <div class="time-separator">:</div>
+            <div class="time-unit">
+                <span class="time-number" id="minutesRemaining"></span>
+                <span class="time-label">Minutes</span>
+            </div>
+            <div class="time-separator">:</div>
+            <div class="time-unit">
+                <span class="time-number" id="secondsRemaining"></span>
+                <span class="time-label">Seconds</span>
+            </div>
+        </div>
+
+        <div class="circular-progress-container">
+            <div class="circular-progress">
+                <svg class="progress-ring" width="300" height="300">
+                    <defs>
+                        <linearGradient id="yearGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8BC34A;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="secondsGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
+                            <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.4" />
+                        </linearGradient>
+                    </defs>
+                    <circle class="progress-ring-background" cx="150" cy="150" r="130" />
+                    <circle class="progress-ring-fill" id="progressRing" cx="150" cy="150" r="130" />
+                    <circle class="progress-ring-seconds" id="secondsRing" cx="150" cy="150" r="115" />
+                </svg>
+                <div class="progress-center">
+                    <div class="center-percentage" id="centerPercentage"></div>
+                    <div class="center-label">Year Complete</div>
+                </div>
             </div>
             <div class="progress-labels">
                 <span>Jan 1</span>
