@@ -205,6 +205,13 @@ h1 {
     opacity: 0.9;
 }
 
+.made-by {
+    margin-top: 20px;
+    font-size: 0.9em;
+    opacity: 0.7;
+    font-style: italic;
+}
+
 /* Theme variations based on remaining time */
 .theme-green #yearGradient stop:first-child {
     stop-color: #4CAF50;
