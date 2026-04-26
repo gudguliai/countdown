@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year Countdown - Days Remaining</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Time Remaining</h1>
+        
+        <div class="countdown-info">
+            <div class="stats">
+                <div class="stat">
+                    <span class="number" id="currentYear"></span>
+                    <span class="label">Year</span>
+                </div>
+                <div class="stat">
+                    <span class="number" id="daysRemaining"></span>
+                    <span class="label">Days Remaining</span>
+                </div>
+                <div class="stat">
+                    <span class="number" id="daysPassed"></span>
+                    <span class="label">Days Passed</span>
+                </div>
+                <div class="stat">
+                    <span class="number" id="percentageRemaining"></span>
+                    <span class="label">% Remaining</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="time-display">
+            <div class="time-today-label">Today</div>
+            <div class="time-units">
+                <div class="time-unit">
+                    <span class="time-number" id="hoursRemaining"></span>
+                    <span class="time-label">Hours</span>
+                </div>
+                <div class="time-separator">:</div>
+                <div class="time-unit">
+                    <span class="time-number" id="minutesRemaining"></span>
+                    <span class="time-label">Minutes</span>
+                </div>
+                <div class="time-separator">:</div>
+                <div class="time-unit">
+                    <span class="time-number" id="secondsRemaining"></span>
+                    <span class="time-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="circular-progress-container">
+            <div class="circular-progress">
+                <svg class="progress-ring" width="300" height="300">
+                    <defs>
+                        <linearGradient id="yearGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8BC34A;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="secondsGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
+                            <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.4" />
+                        </linearGradient>
+                    </defs>
+                    <circle class="progress-ring-background" cx="150" cy="150" r="130" />
+                    <circle class="progress-ring-fill" id="progressRing" cx="150" cy="150" r="130" />
+                    <circle class="progress-ring-seconds" id="secondsRing" cx="150" cy="150" r="115" />
+                </svg>
+                <div class="progress-center">
+                    <div class="center-percentage" id="centerPercentage"></div>
+                    <div class="center-label">Year Complete</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="current-date">
+            <p>Today is <span id="currentDate"></span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

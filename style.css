@@ -1,0 +1,345 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #000000;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-weight: 300;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.countdown-info {
+    margin-bottom: 40px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: nowrap;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+    flex: 1;
+}
+
+.stat .number {
+    font-size: 2.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.stat .label {
+    font-size: 0.75em;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.time-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    gap: 20px;
+}
+
+.time-today-label {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Courier New', monospace;
+    display: flex;
+    align-items: baseline;
+}
+
+.time-units {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60px;
+}
+
+.time-number {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Courier New', monospace;
+}
+
+.time-label {
+    font-size: 0.8em;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+.time-separator {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fff;
+    opacity: 0.7;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 0.7; }
+    51%, 100% { opacity: 0.2; }
+}
+
+.circular-progress-container {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circular-progress {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.progress-ring-background {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 8;
+}
+
+.progress-ring-fill {
+    fill: none;
+    stroke: url(#yearGradient);
+    stroke-width: 8;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+.progress-ring-seconds {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.6);
+    stroke-width: 4;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.1s ease-in-out;
+}
+
+.progress-center {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.center-percentage {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.center-label {
+    font-size: 0.9em;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.current-date {
+    margin-top: 30px;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Theme variations based on remaining time */
+.theme-green #yearGradient stop:first-child {
+    stop-color: #4CAF50;
+}
+.theme-green #yearGradient stop:last-child {
+    stop-color: #8BC34A;
+}
+
+.theme-yellow #yearGradient stop:first-child {
+    stop-color: #FF9800;
+}
+.theme-yellow #yearGradient stop:last-child {
+    stop-color: #FFC107;
+}
+
+.theme-orange #yearGradient stop:first-child {
+    stop-color: #FF5722;
+}
+.theme-orange #yearGradient stop:last-child {
+    stop-color: #FF9800;
+}
+
+.theme-red #yearGradient stop:first-child {
+    stop-color: #F44336;
+}
+.theme-red #yearGradient stop:last-child {
+    stop-color: #E91E63;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    .stats {
+        gap: 10px;
+    }
+    
+    .stat {
+        min-width: 60px;
+    }
+    
+    .stat .number {
+        font-size: 1.8em;
+    }
+    
+    .stat .label {
+        font-size: 0.65em;
+    }
+    
+    .time-today-label {
+        font-size: 2em;
+    }
+    
+    .time-number {
+        font-size: 2em;
+    }
+    
+    .time-separator {
+        font-size: 2em;
+    }
+    
+    .time-display {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .progress-ring {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .center-percentage {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.7em;
+    }
+    
+    .stats {
+        gap: 5px;
+    }
+    
+    .stat {
+        min-width: 50px;
+    }
+    
+    .stat .number {
+        font-size: 1.5em;
+    }
+    
+    .stat .label {
+        font-size: 0.6em;
+    }
+    
+    .time-today-label {
+        font-size: 1.8em;
+    }
+    
+    .time-number {
+        font-size: 1.8em;
+    }
+    
+    .time-separator {
+        font-size: 1.8em;
+    }
+    
+    .time-unit {
+        min-width: 50px;
+    }
+    
+    .time-display {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .progress-ring {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .center-percentage {
+        font-size: 1.8em;
+    }
+    
+    .container {
+        padding: 25px 15px;
+    }
+}
